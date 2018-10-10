@@ -1,0 +1,142 @@
+<br/><br/>
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-7">
+      <h3>
+        <strong>Remote Monitoring System</strong>
+      </h3>
+      <p>
+        <i>Depending on what we want to do, we might need to implement one or the other guard. In some cases, we even need to
+          implement all of them. Let’s take a look at how to define guards</i>
+      </p>
+
+      <img src="../../assets/monitoring.jpg" class="img-responsive" width="100%" height="58%"
+        alt="Image">
+
+    </div>
+
+    <div class="col-md-5">
+
+      <div class="sideForm">
+        <!-- Default form login -->
+        <div [hidden]="register">
+          <form class="text-center border border-light p-5">
+
+            <h4>
+              <span class="badge badge-success" [hidden]="!registrationSuccess">Registration Successful!</span>
+            </h4>
+            <h4>
+              <span class="badge badge-danger" [hidden]="!invalidUser">Wrong Credentials!</span>
+            </h4>
+
+            <p class="h4 mb-4">Sign in</p>
+
+            <!-- Email -->
+            <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail" [(ngModel)]="email" name="email">
+
+            <!-- Password -->
+            <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password" [(ngModel)]="password"
+              name="password">
+
+            <div class="d-flex justify-content-around">
+              <div>
+                <!-- Remember me -->
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                  <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+                </div>
+              </div>
+              <div>
+                <!-- Forgot password -->
+                <a href="">Forgot password?</a>
+              </div>
+            </div>
+
+            <!-- Sign in button -->
+            <input class="btn btn-info btn-block my-4" type="button" value="Sign in" (click)="doLogin()" />
+
+            <!-- Register -->
+            <p>Not a member?
+              <a [routerLink]="" (click)="toggleForm()">Register</a>
+            </p>
+
+            <!-- Social login -->
+            <p>or sign in with:</p>
+
+            <a type="button" class="light-blue-text mx-2">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a type="button" class="light-blue-text mx-2">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a type="button" class="light-blue-text mx-2">
+              <i class="fa fa-linkedin"></i>
+            </a>
+            <a type="button" class="light-blue-text mx-2">
+              <i class="fa fa-github"></i>
+            </a>
+
+          </form>
+        </div>
+
+        <div [hidden]="!register">
+          <!-- Default form register -->
+          <form class="text-center border border-light p-5">
+
+            <span class="badge badge-danger" [hidden]="!emailExists">Email Already Exists!</span>
+
+            <p class="h4 mb-4">Sign up</p>
+
+            <div class="form-row mb-4">
+              <div class="col">
+                <!-- First name -->
+                <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name" [(ngModel)]="firstName"
+                  name="firstName">
+              </div>
+              <div class="col">
+                <!-- Last name -->
+                <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name" [(ngModel)]="lastName" name="lastName">
+              </div>
+            </div>
+
+            <!-- E-mail -->
+            <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" [(ngModel)]="email" name="email">
+
+            <!-- Password -->
+            <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock"
+              [(ngModel)]="password" name="password">
+            <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+              At least 8 characters and 1 digit
+            </small>
+
+            <!-- Sign up button -->
+            <input class="btn btn-info btn-block my-4" type="button" value="Sign up" (click)="doRegister()" />
+
+            <p>Already a member?
+              <a [routerLink]="" (click)="toggleForm()">Login</a>
+            </p>
+
+            <!-- Social register -->
+            <p>or sign up with:</p>
+
+            <a type="button" class="light-blue-text mx-2">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a type="button" class="light-blue-text mx-2">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a type="button" class="light-blue-text mx-2">
+              <i class="fa fa-linkedin"></i>
+            </a>
+            <a type="button" class="light-blue-text mx-2">
+              <i class="fa fa-github"></i>
+            </a>
+          </form>
+          <!-- Default form register -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
